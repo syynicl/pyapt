@@ -13,6 +13,8 @@ try:
         print('4: Remove a package(s)')
         print('5: Search for a package')
         print('6: View package details')
+        print('7: Install a package(s)')
+        print('8: Exit')
         inp = int(input('>>> '))
         # Update packages
         if inp == 1:
@@ -47,6 +49,14 @@ try:
             inp = input('>>> ')
             os.system('apt show {}'.format(inp))
             print('Done.')
+        # Install a package(s)
+        elif inp == 7:
+            print('Enter the name of the package(s) you want to install.')
+            inp = input('>>> ')
+            os.system('sudo apt install {}'.format(inp))
+            print('Done.')
+        elif inp == 8:
+            inLoop = False
 
 # Custom KeyboardInterrupt message
 except KeyboardInterrupt:
